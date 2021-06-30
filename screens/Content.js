@@ -71,9 +71,10 @@ const Content = ({route, navigation}) => {
   return (
     <View style={styles.container}>
       <TextInput
-        style={styles.textInputWrap}
+        style={styles.textInput}
         multiline
         placeholder="Write Content Here..."
+        placeholderTextColor="grey"
         value={text}
         onChangeText={text => setText(text)}
       />
@@ -93,8 +94,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  textInputWrap: {
+  textInput: {
     padding: 20,
+    color: "black",
   },
   image: {
     height: 300,
