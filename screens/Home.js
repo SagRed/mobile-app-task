@@ -33,9 +33,10 @@ const Feed = ({singleFeed}) => {
 };
 
 const Home = ({navigation}) => {
+  const feedUnsorted = useSelector(state => state.feed);
 
-  const feed = useSelector(state => state.feed);
-  
+  const feed = feedUnsorted.slice().sort((a, b) => b.timeStamp - a.timeStamp);
+
   return (
     <View style={styles.container}>
       {feed.length !== 0 ? (
